@@ -57,7 +57,7 @@ router.post("/register",(req,res)=>{
 
         //Check validation
         if(!isValid){
-            return req.status(400).json(errors);
+            return res.status(400).json(errors);
         }
 
         const email = req.body.email;
