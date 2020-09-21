@@ -1,6 +1,5 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const Pastpaper = require("./models/Pastpaper");
 
 const passport = require("passport");
 
@@ -33,7 +32,7 @@ app.get("/a", (req, res) => {
   res.status(200).send("a");
 });
 
-app.use("/resources/pastpapers", pastpapers);
+app.use("/api/resources", pastpapers);
 //Port initialization
 const port = process.env.PORT || 5000; // process.env.port is Heroku's port
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));

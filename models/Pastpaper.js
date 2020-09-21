@@ -17,4 +17,4 @@ const PastpaperSchema = new Schema({
   },
 });
 
-module.exports = User = mongoose.model("pastpapers", PastpaperSchema);
+module.exports = Pastpaper = mongoose.model("pastpapers", PastpaperSchema);

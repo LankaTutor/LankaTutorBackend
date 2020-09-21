@@ -4,11 +4,7 @@ const router = express.Router();
 //Load Pastpaper model
 const Pastpaper = require("../../models/Pastpaper");
 
-router.get("/resources/pastpaers", (req, res) => {
-  res.status(200).send("Pastpaper rendered");
-});
-
-router.post("/resources/pastpapers", (req, res) => {
+router.post("/pastpapers", (req, res) => {
   const dbPapers = req.body;
 
   Pastpaper.create(dbPapers, (err, data) => {
