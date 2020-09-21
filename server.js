@@ -28,11 +28,8 @@ require("./config/passport")(passport);
 
 //Routes
 app.use("/api/users", users);
-app.get("/a", (req, res) => {
-  res.status(200).send("a");
-});
-
 app.use("/api/resources", pastpapers);
+
 //Port initialization
 const port = process.env.PORT || 5000; // process.env.port is Heroku's port
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));
