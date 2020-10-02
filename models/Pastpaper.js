@@ -11,10 +11,22 @@ const PastpaperSchema = new Schema({
     type: String,
     required: true,
   },
+  type:{
+    type:String,
+    required:true,
+  },
   year: {
     type: String,
     required: true,
   },
+  question:{
+    type:String,
+    required:true
+  },
+  answer:{
+    type:String,
+    required:true
+  }
 });
 
 module.exports = Pastpaper = mongoose.model("pastpapers", PastpaperSchema);
