@@ -16,9 +16,28 @@ router.post("/pastpapers", (req, res) => {
   });
 });
 
+<<<<<<< HEAD
 router.get("/pastpapers", async (req, res) => {
   var pastpapers = await Pastpaper.find();
   res.json(pastpapers);
 });
 
+=======
+//getAll
+router.get("/pastpapers",async (req,res)=>{
+  var findData = await Pastpaper.find();
+  res.json(findData);
+});
+
+//getOne
+router.get("/pastpapers/:id",async (req,res)=>{
+  let id = req.params.id;
+  var findById = await Pastpaper.findById(id,(err,pastpaper)=>{
+    res.json(pastpaper);
+  });
+});
+
+
+
+>>>>>>> 4701ad2ebcf7ef7241b26cab8bafc9339ec1bab4
 module.exports = router;
