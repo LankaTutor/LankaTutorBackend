@@ -5,6 +5,7 @@ const passport = require("passport");
 
 const users = require("./routes/api/users");
 const pastpapers = require("./routes/api/pastpapers");
+const exampapers = require("./routes/api/exampaper");
 
 const app = express();
 
@@ -29,6 +30,11 @@ require("./config/passport")(passport);
 //Routes
 app.use("/api/users", users);
 app.use("/api/resources", pastpapers);
+app.use("/api/resources", exampapers);
+
+app.get("/resources", (req, res) => {
+  res.status(200).send("Data Fetching");
+});
 
 //Port initialization
 const port = process.env.PORT || 5000; // process.env.port is Heroku's port

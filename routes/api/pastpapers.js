@@ -16,4 +16,9 @@ router.post("/pastpapers", (req, res) => {
   });
 });
 
+router.get("/pastpapers", async (req, res) => {
+  var pastpapers = await Pastpaper.find();
+  res.json(pastpapers);
+});
+
 module.exports = router;
