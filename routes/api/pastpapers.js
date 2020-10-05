@@ -16,13 +16,14 @@ router.post("/pastpapers", (req, res) => {
   });
 });
 
-<<<<<<< HEAD
-router.get("/pastpapers", async (req, res) => {
-  var pastpapers = await Pastpaper.find();
-  res.json(pastpapers);
-});
 
-=======
+/*--->Priyan added-----> */
+// router.get("/pastpapers", async (req, res) => {
+//   var pastpapers = await Pastpaper.find();
+//   res.json(pastpapers);
+// });
+
+
 //getAll
 router.get("/pastpapers",async (req,res)=>{
   var findData = await Pastpaper.find();
@@ -37,7 +38,4 @@ router.get("/pastpapers/:id",async (req,res)=>{
   });
 });
 
-
-
->>>>>>> 4701ad2ebcf7ef7241b26cab8bafc9339ec1bab4
 module.exports = router;
