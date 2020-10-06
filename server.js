@@ -37,5 +37,7 @@ app.get("/resources", (req, res) => {
 });
 
 //Port initialization
-const port = process.env.PORT || 5000; // process.env.port is Heroku's port
+const port = process.env.PORT; // process.env.port is Heroku's port
 app.listen(port, () => console.log(`Server up and running on port ${port} !`));
+
+
