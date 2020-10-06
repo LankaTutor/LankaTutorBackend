@@ -10,7 +10,11 @@ const UserSchema = new Schema({
     },
     email:{
         type:String,
-        required:true
+        required:true,
+    },
+    role:{
+        type:String,
+        default:'student'
     },
     password:{
         type:String,
@@ -22,5 +26,6 @@ const UserSchema = new Schema({
     }
 
 });
+
 
 module.exports = User = mongoose.model("users",UserSchema);

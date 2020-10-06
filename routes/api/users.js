@@ -3,6 +3,20 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
+// const sgMail = require('@sendgrid/mail');
+
+// sgMail.setApiKey('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');
+
+// const nodemailer = require('nodemailer');
+// const sendgridTransport = require('nodemailer-sendgrid-transport');
+
+// const options = nodemailer.createTransport(sendgridTransport({
+//     auth:{
+//         api_key:"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"
+//     },
+// }));
+
+// const mailer = nodemailer.createTransport(sendgridTransport(options));
 
 //Load input validation
 const validateRegisterInput = require('../../validation/register');
@@ -32,6 +46,25 @@ router.post("/register",(req,res)=>{
                 email:req.body.email,
                 password:req.body.password
             });
+            
+            
+            // const msg = {
+            //     to: req.body.email, // Change to your recipient
+            //     from: '2017cs029@stu.ucsc.cmb.ac.lk', // Change to your verified sender
+            //     subject: 'Sending with SendGrid is Fun',
+            //     text: 'and easy to do anywhere, even with Node.js',
+            //     html: '<strong>and easy to do anywhere, even with Node.js</strong>',
+            //   }
+            //   sgMail
+            //     .send(msg)
+            //     .then(() => {
+            //       console.log('Email sent')
+            //     })
+            //     .catch((error) => {
+            //       console.error(error)
+            //     })
+
+            
 
             //Hash password before saving in database
             bcrypt.genSalt(10,(err,salt)=>{
@@ -43,6 +76,22 @@ router.post("/register",(req,res)=>{
                         .catch(err=>console.log(err));
                 });
             });
+
+            // var mail = {
+            //     to: req.body.email,
+            //     from: 'dilushvasu1996@gmail.com',
+            //     subject: 'Hi there',
+            //     text: 'Awesome sauce',
+            //     html: '<b>Awesome sauce</b>'
+            // };
+
+            //  mailer.sendMail(mail, function(err, res) {
+            //     if (err) { 
+            //         console.log(err) 
+            //     }
+            //     console.log(res);
+            // });
+            
         }
       });
     });

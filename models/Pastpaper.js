@@ -19,11 +19,11 @@ const PastpaperSchema = new Schema({
     type: String,
     required: true,
   },
-  question:{
+  fileUrlQues:{
     type:String,
     required:true
   },
-  answer:{
+  fileUrlAns:{
     type:String,
     required:true
   }

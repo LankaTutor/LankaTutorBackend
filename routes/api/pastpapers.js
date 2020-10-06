@@ -16,19 +16,11 @@ router.post("/pastpapers", (req, res) => {
   });
 });
 
-
-/*--->Priyan added-----> */
-// router.get("/pastpapers", async (req, res) => {
-//   var pastpapers = await Pastpaper.find();
-//   res.json(pastpapers);
+// //getAll
+// router.get("/pastpapers",async (req,res)=>{
+//   var findData = await Pastpaper.find();
+//   res.json(findData);
 // });
-
-
-//getAll
-router.get("/pastpapers",async (req,res)=>{
-  var findData = await Pastpaper.find();
-  res.json(findData);
-});
 
 //getOne
 router.get("/pastpapers/:id",async (req,res)=>{
@@ -37,5 +29,23 @@ router.get("/pastpapers/:id",async (req,res)=>{
     res.json(pastpaper);
   });
 });
+
+
+
+router.get('/pastpapers',async(req, res)=>{
+  Pastpaper.find({subject: "Maths"}, function(err, pastpaper) 
+  {
+     if (err)
+     {
+         res.send(err);
+     }
+     console.log(pastpaper);
+     res.json(pastpaper);
+ 
+  });
+ });
+ 
+
+// db.collection.find()
 
 module.exports = router;
