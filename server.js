@@ -29,7 +29,7 @@ require("./config/passport")(passport);
 
 //Routes
 app.use("/api/users", users);
-app.use("/api/resources", pastpapers);
+app.use("/api/pastpapers", pastpapers);
 app.use("/api/resources", exampapers);
 
 app.get("/resources", (req, res) => {
