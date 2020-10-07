@@ -36,6 +36,7 @@ router.post("/register",(req,res)=>{
             const newUser = new User({
                 fullname:req.body.fullname,
                 email:req.body.email,
+                role:req.body.role,
                 password:req.body.password
             });
             
@@ -91,7 +92,8 @@ router.post("/register",(req,res)=>{
                     //Create JWT Payload
                     const payload = {
                         id:user.id,
-                        fullname:user.fullname
+                        fullname:user.fullname,
+                        role:user.role
                     };
 
                     //sign token
