@@ -4,7 +4,7 @@ const router = express.Router();
 //Load Pastpaper model
 const Pastpaper = require("../../models/Pastpaper");
 
-router.post("/pastpapers", (req, res) => {
+router.post("/", (req, res) => {
   const dbPapers = req.body;
 
   Pastpaper.create(dbPapers, (err, data) => {
@@ -16,34 +16,63 @@ router.post("/pastpapers", (req, res) => {
   });
 });
 
-// //getAll
-// router.get("/pastpapers",async (req,res)=>{
-//   var findData = await Pastpaper.find();
-//   res.json(findData);
-// });
+router.get("/",async (req,res)=>{
+  let findData = await Pastpaper.find();
+  res.json(findData);
+});
+
+ //getMaths
+router.get("/Maths",async (req,res)=>{
+  let findData = await Pastpaper.find({subject:"Maths"});
+  res.json(findData);
+});
+
+//getPhysics
+router.get("/Physics",async (req,res)=>{
+  let findData = await Pastpaper.find({subject:"Physics"});
+  res.json(findData);
+});
+
+//getChemistry
+router.get("/Chemistry",async (req,res)=>{
+  let findData = await Pastpaper.find({subject:"Chemistry"});
+  res.json(findData);
+});
+
+//getICT
+router.get("/ICT",async (req,res)=>{
+  let findData = await Pastpaper.find({subject:"ICT"});
+  res.json(findData);
+});
+
+//getBiology
+router.get("/Biology",async (req,res)=>{
+  let findData = await Pastpaper.find({subject:"Biology"});
+  res.json(findData);
+});
 
 //getOne
-router.get("/pastpapers/:id",async (req,res)=>{
+router.get("/:id",async (req,res)=>{
   let id = req.params.id;
-  var findById = await Pastpaper.findById(id,(err,pastpaper)=>{
+  let findById = await Pastpaper.findById(id,(err,pastpaper)=>{
     res.json(pastpaper);
   });
 });
 
 
 
-router.get('/pastpapers',async(req, res)=>{
-  Pastpaper.find({subject: "Maths"}, function(err, pastpaper) 
-  {
-     if (err)
-     {
-         res.send(err);
-     }
-     console.log(pastpaper);
-     res.json(pastpaper);
+// router.get('/Maths',async(req, res)=>{
+//   Pastpaper.find({subject: "Maths"}, function(err, pastpaper) 
+//   {
+//      if (err)
+//      {
+//          res.send(err);
+//      }
+//      console.log(pastpaper);
+//      res.json(pastpaper);
  
-  });
- });
+//   });
+//  });
  
 
 // db.collection.find()
