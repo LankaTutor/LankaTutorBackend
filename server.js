@@ -6,6 +6,7 @@ const passport = require("passport");
 const users = require("./routes/api/users");
 const pastpapers = require("./routes/api/pastpapers");
 const exampapers = require("./routes/api/exampaper");
+const articles = require("./routes/api/articles");
 
 const app = express();
 
@@ -31,6 +32,7 @@ require("./config/passport")(passport);
 app.use("/api/users", users);
 app.use("/api/pastpapers", pastpapers);
 app.use("/api/resources", exampapers);
+app.use("/api/articles", articles);
 
 app.get("/resources", (req, res) => {
   res.status(200).send("Data Fetching");
