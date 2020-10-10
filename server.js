@@ -4,9 +4,11 @@ const mongoose = require("mongoose");
 const passport = require("passport");
 
 const users = require("./routes/api/users");
+const subjects = require("./routes/api/subjects")
 const pastpapers = require("./routes/api/pastpapers");
 const exampapers = require("./routes/api/exampaper");
-
+const articles = require("./routes/api/articles");
+const subunits = require("./routes/api/subunits");
 const app = express();
 
 //Middleware
@@ -31,6 +33,11 @@ require("./config/passport")(passport);
 app.use("/api/users", users);
 app.use("/api/pastpapers", pastpapers);
 app.use("/api/exampapers", exampapers);
+app.use("/api", articles);
+app.use("/api", subjects);
+app.use("/api", subunits);
+// app.use("/api", pastpapers);
+// app.use("/api", exampapers);
 
 app.get("/resources", (req, res) => {
   res.status(200).send("Data Fetching");

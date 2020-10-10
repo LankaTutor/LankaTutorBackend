@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-//Load Pastpaper model
+//Load Exampaper model
 const Exampaper = require("../../models/Exampaper");
 
 // router.post("/exampapers", (req, res) => {
@@ -83,4 +83,3 @@ router.get("/:id",async (req,res)=>{
 
 
 module.exports = router;
-
