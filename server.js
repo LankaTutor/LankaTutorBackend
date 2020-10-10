@@ -30,7 +30,7 @@ require("./config/passport")(passport);
 //Routes
 app.use("/api/users", users);
 app.use("/api/pastpapers", pastpapers);
-app.use("/api/resources", exampapers);
+app.use("/api/exampapers", exampapers);
 
 app.get("/resources", (req, res) => {
   res.status(200).send("Data Fetching");
