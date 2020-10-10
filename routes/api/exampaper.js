@@ -16,6 +16,7 @@ router.post("/exampapers", (req, res) => {
   });
 });
 
+
 router.get("/exampapers", (req, res) => {
   Exampaper.find((err, data) => {
     if (err) {
