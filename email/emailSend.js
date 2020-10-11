@@ -24,7 +24,7 @@ sgMail.setApiKey(process.env.SENDGRIDAPI);
 
 // sgMail.setApiKey(process.env.SENDGRID_API_KEY); //need to assign the api key in config
 
-const sendWelcomeEmail = (email, name, host) => {
+const sendWelcomeEmail = (email, name) => {
   sgMail.send({
     to: email,
     from: '2017cs029@stu.ucsc.cmb.ac.lk',
@@ -32,8 +32,7 @@ const sendWelcomeEmail = (email, name, host) => {
     text: `Welcome to LankaTutor, ${name}. Keep in touch with us`,
     text:
     "Hello,\n\n" +
-    "Please verify your account by clicking the link: \nhttp://" +
-    host +
+    "Please verify your account by clicking the link: \nhttp://localhost:3000/login" +
     "\n",
   }).then(() => {
         console.log('Email sent')

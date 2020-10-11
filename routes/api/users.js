@@ -52,7 +52,7 @@ router.post("/register",(req,res)=>{
                 });
             });
 
-            sendWelcomeEmail(newUser.email, newUser.fullname,req.header("host") );
+            sendWelcomeEmail(newUser.email, newUser.fullname);
             // sendVerificationEmail(
             // newUser.email,
             // req.header("host")
