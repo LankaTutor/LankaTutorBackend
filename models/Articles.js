@@ -15,6 +15,10 @@ const ArticlesSchema = new Schema({
     type: String,
     required: true,
   },
+  avatar: {
+    type: String,
+    required: true,
+  },
   description: {
     type: String,
     required: true,
@@ -27,7 +31,7 @@ const ArticlesSchema = new Schema({
     type: String,
     required: true,
   },
-  imageUrl: {
+  img: {
     type: String,
     required: true,
   },

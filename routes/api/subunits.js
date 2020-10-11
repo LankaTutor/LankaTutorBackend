@@ -25,6 +25,46 @@ router.post("/subunits", (req, res) => {
       }
     });
   });
+
+  router.get("/subunits/physics", (req, res) => {
+    SubUnit.find(({},{subject: 'Physics'}), (err,data)=>{
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.status(200).send(data);
+      }
+    });
+  });
+
+  router.get("/subunits/chemistry", (req, res) => {
+    SubUnit.find(({},{subject: 'Chemistry'}), (err,data)=>{
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.status(200).send(data);
+      }
+    });
+  });
+
+  router.get("/subunits/biology", (req, res) => {
+    SubUnit.find(({},{subject: 'Biology'}), (err,data)=>{
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.status(200).send(data);
+      }
+    });
+  });
+
+  router.get("/subunits/mathematics", (req, res) => {
+    SubUnit.find(({},{subject: 'Mathematics'}), (err,data)=>{
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.status(200).send(data);
+      }
+    });
+  });
   
   module.exports = router;
   
