@@ -7,12 +7,9 @@ const users = require("./routes/api/users");
 const subjects = require("./routes/api/subjects")
 const pastpapers = require("./routes/api/pastpapers");
 const exampapers = require("./routes/api/exampaper");
-<<<<<<< HEAD
 const articles = require("./routes/api/articles");
 
-=======
 const subunits = require("./routes/api/subunits")
->>>>>>> 35d3b874f426463602d3c1394a9226aa7b089905
 const app = express();
 
 //Middleware
