@@ -29,9 +29,8 @@ const sendWelcomeEmail = (email, name) => {
     to: email,
     from: '2017cs029@stu.ucsc.cmb.ac.lk',
     subject: "Thanks for joining with us",
-    text: `Welcome to LankaTutor, ${name}. Keep in touch with us`,
     text:
-    "Hello,\n\n" +
+    `Hello,${name}\n\n` +
     "Please verify your account by clicking the link: \nhttp://localhost:3000/login" +
     "\n",
   }).then(() => {
