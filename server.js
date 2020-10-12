@@ -9,6 +9,9 @@ const pastpapers = require("./routes/api/pastpapers");
 const exampapers = require("./routes/api/exampaper");
 const articles = require("./routes/api/articles");
 const subunits = require("./routes/api/subunits");
+const questions = require('./routes/api/questions');
+const answers = require('./routes/api/answers');
+const lectures = require("./routes/api/lectures");
 const app = express();
 
 //Middleware
@@ -33,6 +36,9 @@ require("./config/passport")(passport);
 app.use("/api/users", users);
 app.use("/api/pastpapers", pastpapers);
 app.use("/api/exampapers", exampapers);
+app.use("/api/questions", questions);
+app.use("/api/answers", answers);
+app.use("/api/lectures", lectures)
 app.use("/api", articles);
 app.use("/api", subjects);
 app.use("/api", subunits);

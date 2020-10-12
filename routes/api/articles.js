@@ -26,4 +26,11 @@ router.get("/articles", (req, res) => {
   });
 });
 
+router.get("/articles/:id", async (req, res) => {
+  let id = req.params.id;
+  let findById = await Articles.findById(id,(err,article)=>{
+    res.json(article);
+  });
+});
+
 module.exports = router;
